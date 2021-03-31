@@ -55,18 +55,18 @@ class PhotosAdapter(
                 when (msg.what) {
                     1 -> {
                         image.layoutParams.height = itemView.width/4
-                        if (msg.obj != null)
-                            image.setImageBitmap(msg.obj as Bitmap)
-                        val photo = image.tag as Photos
-                        textViewId.text = photo.id
-                        textViewTitle.text = photo.title
+                        image.setImageBitmap(msg.obj as Bitmap)
                     }
                 }
             }
         }
+
         val photo = image.tag as Photos
         image.setImageDrawable(parentview.resources.getDrawable(R.drawable.ic_refresh,null))
-        var bitmap = lruCacheUtil.getBitmap(photo.thumbnailUrl)
+        textViewId.text = photo.id
+        textViewTitle.text = photo.title
+
+        val bitmap = lruCacheUtil.getBitmap(photo.thumbnailUrl)
         if (bitmap == null) {
             URLtoBitmapUtil.instance.get(URL(photo.thumbnailUrl)
                 , object : URLtoBitmapUtil.URLtoBitmapTaskFinish {
