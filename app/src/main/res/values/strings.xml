@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">cloudinteractiveFrank</string>
+    <string name="back"><![CDATA[<Back]]></string>
+    <string name="id"> id : %1$s </string>
+    <string name="title"> title : %1$s </string>
+    <string name="request_api">Request Api</string>
+    <string name="my_name">范哲嘉</string>
+
+</resources>
